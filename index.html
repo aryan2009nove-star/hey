@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Video Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-video"></i> Text to Video Converter</h1>
+            <p>Transform your long texts into professional videos instantly</p>
+        </header>
+
+        <div class="input-section">
+            <textarea id="textInput" placeholder="Paste your long text here... (up to 5000 characters)" maxlength="5000"></textarea>
+            <div class="input-controls">
+                <select id="voiceSelect">
+                    <option value="en-US-JennyNeural">Jenny (US Female)</option>
+                    <option value="en-US-GuyNeural">Guy (US Male)</option>
+                    <option value="en-GB-SoniaNeural">Sonia (UK Female)</option>
+                    <option value="en-IN-NeerjaNeural">Neerja (India Female)</option>
+                </select>
+                <select id="speedSelect">
+                    <option value="1.0">Normal Speed</option>
+                    <option value="0.8">Slow</option>
+                    <option value="1.2">Fast</option>
+                </select>
+                <button id="convertBtn" class="convert-btn">
+                    <i class="fas fa-magic"></i> Convert to Video
+                </button>
+            </div>
+        </div>
+
+        <div id="progressContainer" class="progress-container" style="display: none;">
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <p id="progressText">Processing...</p>
+        </div>
+
+        <div id="videoSection" class="video-section" style="display: none;">
+            <div class="video-container">
+                <video id="outputVideo" controls width="100%" height="auto"></video>
+                <div class="video-controls">
+                    <button id="downloadBtn" class="download-btn">
+                        <i class="fas fa-download"></i> Download Video
+                    </button>
+                    <button id="regenerateBtn" class="regenerate-btn">
+                        <i class="fas fa-redo"></i> Regenerate
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="previewSection" class="preview-section" style="display: none;">
+            <canvas id="previewCanvas" width="640" height="360"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
